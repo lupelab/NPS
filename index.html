@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Encuesta NPS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="bg-orb orb-1"></div>
+  <div class="bg-orb orb-2"></div>
+
+  <main class="layout">
+    <aside class="sidebar">
+      <div class="brand-pill">Encuesta NPS</div>
+      <h1>Escucharte nos ayuda a mejorar</h1>
+      <p class="sidebar-copy">
+        Avanzarás bloque por bloque. Cada pantalla contiene una sola pregunta o un solo bloque,
+        con una barra de progreso visible todo el tiempo.
+      </p>
+
+      <div class="progress-card">
+        <div class="progress-topline">
+          <span id="stepCounter">Paso 1 de 14</span>
+          <span id="progressPercent">7%</span>
+        </div>
+        <div id="progressBar" class="progress-track" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="7">
+          <div id="progressFill" class="progress-fill"></div>
+        </div>
+        <p id="currentStepTitle" class="current-step-title">Introducción</p>
+      </div>
+
+      <ol class="step-list" id="stepList">
+        <li class="active">Introducción</li>
+        <li>Agencia</li>
+        <li>Experiencia 1</li>
+        <li>Experiencia 2</li>
+        <li>Experiencia 3</li>
+        <li>Valor 1</li>
+        <li>Valor 2</li>
+        <li>Valor 3</li>
+        <li>Relación</li>
+        <li>NPS recomendación</li>
+        <li>NPS continuidad</li>
+        <li>Comentarios</li>
+        <li>Ficha</li>
+        <li>Revisión</li>
+      </ol>
+    </aside>
+
+    <section class="survey-shell">
+      <form id="surveyForm" class="survey-card" novalidate>
+        <section class="step active intro-step" data-step-title="Introducción">
+          <span class="step-kicker">Bienvenida</span>
+          <h2>Queremos que responder esto sea rápido, simple y útil</h2>
+          <p class="lead">
+            El <strong>NPS (Net Promoter Score)</strong> es la herramienta de gestión de mejora continua que utilizamos para mejorar la experiencia de nuestros clientes. Esta encuesta no te tomará más de <strong>5 minutos</strong>.
+          </p>
+
+          <div class="hero-points">
+            <div class="hero-point">
+              <strong>Qué vas a encontrar</strong>
+              <span>Preguntas cortas, una sola pantalla por bloque y una barra de progreso para que siempre sepas cuánto falta.</span>
+            </div>
+            <div class="hero-point">
+              <strong>Cómo funciona</strong>
+              <span>Podés avanzar o volver sin perder tus respuestas. La ficha con tus datos queda al final.</span>
+            </div>
+            <div class="hero-point">
+              <strong>Para qué sirve</strong>
+              <span>Usamos tus respuestas para detectar oportunidades concretas de mejora en el servicio.</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="step" data-step-title="Agencia evaluada">
+          <div class="step-header solo-card-header">
+            <span class="step-kicker">Paso 1</span>
+            <h2>¿Qué agencia estás evaluando?</h2>
+            <p class="lead">Seleccioná una opción para personalizar el resto de la encuesta.</p>
+          </div>
+
+          <div class="agency-grid" id="agencyGrid">
+            <label class="agency-card"><input type="radio" name="agenciaEvaluada" value="LUPE" required /><span>LUPE</span></label>
+            <label class="agency-card"><input type="radio" name="agenciaEvaluada" value="OMD" required /><span>OMD</span></label>
+            <label class="agency-card"><input type="radio" name="agenciaEvaluada" value="ROGER" required /><span>ROGER</span></label>
+            <label class="agency-card"><input type="radio" name="agenciaEvaluada" value="PHD" required /><span>PHD</span></label>
+            <label class="agency-card"><input type="radio" name="agenciaEvaluada" value="NASTA" required /><span>NASTA</span></label>
+            <label class="agency-card"><input type="radio" name="agenciaEvaluada" value="BRICK" required /><span>BRICK</span></label>
+            <label class="agency-card"><input type="radio" name="agenciaEvaluada" value="BPR" required /><span>BPR</span></label>
+            <label class="agency-card"><input type="radio" name="agenciaEvaluada" value="AMPLIFY" required /><span>AMPLIFY</span></label>
+            <label class="agency-card"><input type="radio" name="agenciaEvaluada" value="ROW" required /><span>ROW</span></label>
+          </div>
+        </section>
+
+        <section class="step" data-step-title="Experiencia del equipo 1">
+          <div class="step-header solo-card-header">
+            <span class="step-kicker">Experiencia del equipo</span>
+            <h2>Nuestro equipo disfrutó trabajando con la agencia</h2>
+            <p class="lead">Elegí la opción que mejor represente la experiencia general.</p>
+          </div>
+          <div class="question-panel">
+            <div class="likert-grid" data-name="q1DisfrutoTrabajar"></div>
+          </div>
+        </section>
+
+        <section class="step" data-step-title="Experiencia del equipo 2">
+          <div class="step-header solo-card-header">
+            <span class="step-kicker">Experiencia del equipo</span>
+            <h2>El equipo de la agencia con el que trabajamos fue fiable</h2>
+            <p class="lead">Pensá en consistencia, cumplimiento y confianza durante el trabajo.</p>
+          </div>
+          <div class="question-panel">
+            <div class="likert-grid" data-name="q2Fiables"></div>
+          </div>
+        </section>
+
+        <section class="step" data-step-title="Experiencia del equipo 3">
+          <div class="step-header solo-card-header">
+            <span class="step-kicker">Experiencia del equipo</span>
+            <h2>La agencia fomentó un ambiente colaborativo</h2>
+            <p class="lead">Evaluá cómo se sintió la dinámica de trabajo conjunta.</p>
+          </div>
+          <div class="question-panel">
+            <div class="likert-grid" data-name="q3Colaborativo"></div>
+          </div>
+        </section>
+
+        <section class="step" data-step-title="Estrategia y valor 1">
+          <div class="step-header solo-card-header">
+            <span class="step-kicker">Estrategia y valor</span>
+            <h2>La agencia creó valor para nuestro equipo y permitió mejores prácticas para cumplir los objetivos planteados</h2>
+            <p class="lead">Considerá tanto el aporte estratégico como el impacto real en el trabajo.</p>
+          </div>
+          <div class="question-panel">
+            <div class="likert-grid" data-name="q4CreoValor"></div>
+          </div>
+        </section>
+
+        <section class="step" data-step-title="Estrategia y valor 2">
+          <div class="step-header solo-card-header">
+            <span class="step-kicker">Estrategia y valor</span>
+            <h2>El trabajo de la agencia se basó en la estrategia</h2>
+            <p class="lead">Respondé pensando en foco, criterio y alineación con los objetivos.</p>
+          </div>
+          <div class="question-panel">
+            <div class="likert-grid" data-name="q5BasadoEstrategia"></div>
+          </div>
+        </section>
+
+        <section class="step" data-step-title="Estrategia y valor 3">
+          <div class="step-header solo-card-header">
+            <span class="step-kicker">Estrategia y valor</span>
+            <h2>La agencia nos permitió adoptar una mentalidad creativa</h2>
+            <p class="lead">Evaluá si ayudó a abrir nuevas ideas, caminos o enfoques de trabajo.</p>
+          </div>
+          <div class="question-panel">
+            <div class="likert-grid" data-name="q6MentalidadCreativa"></div>
+          </div>
+        </section>
+
+        <section class="step" data-step-title="Relación de trabajo">
+          <div class="step-header solo-card-header">
+            <span class="step-kicker">Relación de trabajo</span>
+            <h2>Durante la relación con la agencia</h2>
+            <p class="lead">Seleccioná todos los puntos que correspondan.</p>
+          </div>
+          <div class="chip-grid checkbox-grid">
+            <label class="chip-option"><input type="checkbox" name="aspectos" value="Fue clara en la definición de los procesos de trabajo" /><span>Fue clara en la definición de los procesos de trabajo</span></label>
+            <label class="chip-option"><input type="checkbox" name="aspectos" value="Se alineó y ajustó al cronograma propuesto inicialmente" /><span>Se alineó y ajustó al cronograma propuesto inicialmente</span></label>
+            <label class="chip-option"><input type="checkbox" name="aspectos" value="Dio espacios a momentos de construcción y estrategia" /><span>Dio espacios a momentos de construcción y estrategia</span></label>
+            <label class="chip-option"><input type="checkbox" name="aspectos" value="Identificó oportunidades para mejorar las experiencias" /><span>Identificó oportunidades para mejorar las experiencias</span></label>
+            <label class="chip-option"><input type="checkbox" name="aspectos" value="Tuvo un buen nivel de análisis y llegó a conclusiones prácticas con impacto en el servicio" /><span>Tuvo un buen nivel de análisis y llegó a conclusiones prácticas con impacto en el servicio</span></label>
+            <label class="chip-option"><input type="checkbox" name="aspectos" value="Realizó implementaciones de calidad y ejecutó correctamente las acciones propuestas en el plan" /><span>Realizó implementaciones de calidad y ejecutó correctamente las acciones propuestas en el plan</span></label>
+          </div>
+        </section>
+
+        <section class="step" data-step-title="NPS recomendación">
+          <div class="step-header solo-card-header">
+            <span class="step-kicker">NPS</span>
+            <h2>En una escala de 0 a 10, ¿qué tan probable es que recomiendes a esta agencia a un colega o amigo?</h2>
+            <p class="lead">Donde <strong>0 = nada probable</strong> y <strong>10 = altamente probable</strong>.</p>
+          </div>
+          <div class="nps-section">
+            <div class="nps-scale" data-name="npsRecomendacion"></div>
+            <div class="nps-legend">
+              <span>0 = nada probable</span>
+              <span>10 = altamente probable</span>
+            </div>
+            <div class="nps-feedback-card" id="npsRecomendacionFeedback">
+              <div class="nps-feedback-empty">Seleccioná un valor para ver la interpretación.</div>
+            </div>
+          </div>
+        </section>
+
+        <section class="step" data-step-title="NPS continuidad">
+          <div class="step-header solo-card-header">
+            <span class="step-kicker">Continuidad</span>
+            <h2>En una escala de 0 a 10, ¿qué tan probable es que continúes contratando los servicios de esta agencia?</h2>
+            <p class="lead">Donde <strong>0 = nada probable</strong> y <strong>10 = altamente probable</strong>.</p>
+          </div>
+          <div class="nps-section">
+            <div class="nps-scale" data-name="npsContinuidad"></div>
+            <div class="nps-legend">
+              <span>0 = nada probable</span>
+              <span>10 = altamente probable</span>
+            </div>
+            <div class="nps-feedback-card" id="npsContinuidadFeedback">
+              <div class="nps-feedback-empty">Seleccioná un valor para ver la interpretación.</div>
+            </div>
+          </div>
+        </section>
+
+        <section class="step" data-step-title="Comentarios">
+          <div class="step-header solo-card-header">
+            <span class="step-kicker">Comentarios</span>
+            <h2>Queremos entender mejor tu evaluación</h2>
+            <p class="lead">Tu contexto nos ayuda a transformar un puntaje en una mejora concreta.</p>
+          </div>
+          <label class="field-stack">
+            <span class="field-label">¿Por qué elegiste esa puntuación? *</span>
+            <textarea name="motivoPuntuacion" rows="5" required placeholder="Contanos brevemente qué influyó en tu evaluación."></textarea>
+          </label>
+          <label class="field-stack">
+            <span class="field-label">Comentarios adicionales</span>
+            <textarea name="comentariosAdicionales" rows="6" placeholder="Si querés, sumá detalles, oportunidades de mejora o algo que te gustaría destacar."></textarea>
+          </label>
+        </section>
+
+        <section class="step" data-step-title="Ficha de datos">
+          <div class="step-header solo-card-header">
+            <span class="step-kicker">Ficha final</span>
+            <h2>Por último, tus datos</h2>
+            <p class="lead">Esta información queda al final para que el proceso de respuesta sea más liviano.</p>
+          </div>
+
+          <div class="field-grid">
+            <label class="field-stack">
+              <span class="field-label">Nombre y apellido *</span>
+              <input type="text" name="nombreApellido" required autocomplete="name" />
+            </label>
+
+            <label class="field-stack">
+              <span class="field-label">Correo *</span>
+              <input type="email" name="correo" required autocomplete="email" />
+            </label>
+
+            <label class="field-stack">
+              <span class="field-label">Organización *</span>
+              <input type="text" name="organizacion" required />
+            </label>
+
+            <label class="field-stack autocomplete">
+              <span class="field-label">Cargo *</span>
+              <input type="text" name="cargo" required autocomplete="off" placeholder="Escribí tu cargo" />
+              <div class="suggestions" id="cargoSuggestions" hidden></div>
+            </label>
+
+            <label class="field-stack autocomplete field-span-2">
+              <span class="field-label">Servicio contratado *</span>
+              <input type="text" name="servicioContratado" required autocomplete="off" placeholder="Escribí el servicio contratado" />
+              <div class="suggestions" id="servicioContratadoSuggestions" hidden></div>
+            </label>
+          </div>
+
+          <div class="meeting-box">
+            <label class="meeting-toggle">
+              <input type="checkbox" name="reunionSolicitada" id="reunionSolicitada" />
+              <span>Quiero que me contacten para una reunión con el comité del cliente para profundizar mi feedback.</span>
+            </label>
+          </div>
+        </section>
+
+        <section class="step" data-step-title="Revisión final">
+          <div class="step-header solo-card-header">
+            <span class="step-kicker">Revisión</span>
+            <h2>Revisá tu respuesta antes de enviarla</h2>
+            <p class="lead">Podés volver atrás para ajustar cualquier punto antes de enviar.</p>
+          </div>
+          <div id="reviewBox" class="review-box"></div>
+        </section>
+
+        <div class="status" id="status"></div>
+
+        <div class="nav-bar" id="navBar">
+          <button type="button" class="btn btn-ghost" id="prevBtn">Atrás</button>
+          <div class="nav-hint" id="navHint">Presioná Enter para avanzar cuando este bloque esté completo.</div>
+          <div class="nav-main-actions">
+            <button type="button" class="btn btn-primary" id="nextBtn">Siguiente</button>
+            <button type="submit" class="btn btn-primary" id="submitBtn" hidden>Enviar encuesta</button>
+          </div>
+        </div>
+      </form>
+
+      <section id="thankYouScreen" class="survey-card thank-you-card" hidden>
+        <span class="step-kicker">Gracias</span>
+        <h2>Gracias por completar la encuesta</h2>
+        <p class="lead">
+          Tu respuesta ya fue registrada. Este feedback nos ayuda a mejorar de forma continua la experiencia de nuestros clientes.
+        </p>
+        <div class="hero-points compact-points">
+          <div class="hero-point">
+            <strong>Tu encuesta quedó enviada</strong>
+            <span>Ya podés cerrar esta ventana con tranquilidad.</span>
+          </div>
+          <div class="hero-point" id="meetingThanksBox">
+            <strong>¿Querés profundizar tu feedback?</strong>
+            <span>Podés solicitar una reunión con el comité del cliente.</span>
+          </div>
+        </div>
+        <div class="thank-actions">
+          <button type="button" class="btn btn-primary" id="meetingRequestBtn">Solicitar reunión con el comité del cliente</button>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
