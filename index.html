@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Encuesta de satisfacción</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="bg-orb orb-1"></div>
+  <div class="bg-orb orb-2"></div>
+
+  <main class="layout">
+    <aside class="sidebar">
+      <div class="brand-pill">Evaluación de agencias</div>
+      <h1>Encuesta de satisfacción</h1>
+      <p class="sidebar-copy">
+        Una experiencia guiada, clara y rápida. Cada bloque aparece en una sola pantalla y puedes avanzar o volver sin perder información.
+      </p>
+
+      <div class="progress-card">
+        <div class="progress-topline">
+          <span id="stepCounter">Bloque 1 de 8</span>
+          <span id="progressPercent">13%</span>
+        </div>
+        <div class="progress-track" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="13">
+          <div id="progressFill" class="progress-fill"></div>
+        </div>
+        <p id="currentStepTitle" class="current-step-title">Bienvenida</p>
+      </div>
+
+      <ol class="step-list" id="stepList">
+        <li class="active">Bienvenida</li>
+        <li>Agencia evaluada</li>
+        <li>Experiencia del equipo</li>
+        <li>Estrategia y valor</li>
+        <li>Relación de trabajo</li>
+        <li>NPS y continuidad</li>
+        <li>Ficha de datos</li>
+        <li>Revisión final</li>
+      </ol>
+    </aside>
+
+    <section class="survey-shell">
+      <form id="surveyForm" class="survey-card" novalidate>
+        <section class="step active" data-step-title="Bienvenida">
+          <div class="hero-step">
+            <span class="step-kicker">Encuesta</span>
+            <h2>Queremos que responder esto se sienta simple</h2>
+            <p class="lead">
+              Te tomará solo unos minutos. La ficha con tus datos queda al final, y durante todo el recorrido verás tu progreso.
+            </p>
+            <div class="hero-points">
+              <div class="hero-point">
+                <strong>Bloques claros</strong>
+                <span>Cada sección reúne preguntas relacionadas en una sola pantalla.</span>
+              </div>
+              <div class="hero-point">
+                <strong>Navegación fluida</strong>
+                <span>Puedes avanzar o volver cuando quieras.</span>
+              </div>
+              <div class="hero-point">
+                <strong>Autocompletado</strong>
+                <span>En cargo y servicio contratado aparecerán sugerencias mientras escribes.</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="step" data-step-title="Agencia evaluada">
+          <div class="step-header">
+            <span class="step-kicker">Bloque 1</span>
+            <h2>¿Qué agencia estás evaluando?</h2>
+            <p class="lead">Selecciona una opción para personalizar el resto de la experiencia.</p>
+          </div>
+
+          <div class="agency-grid" id="agencyGrid">
+            <label class="agency-card">
+              <input type="radio" name="agenciaEvaluada" value="LUPE" required />
+              <span>LUPE</span>
+            </label>
+            <label class="agency-card">
+              <input type="radio" name="agenciaEvaluada" value="OMD" required />
+              <span>OMD</span>
+            </label>
+            <label class="agency-card">
+              <input type="radio" name="agenciaEvaluada" value="ROGER" required />
+              <span>ROGER</span>
+            </label>
+            <label class="agency-card">
+              <input type="radio" name="agenciaEvaluada" value="PHD" required />
+              <span>PHD</span>
+            </label>
+            <label class="agency-card">
+              <input type="radio" name="agenciaEvaluada" value="NASTA" required />
+              <span>NASTA</span>
+            </label>
+            <label class="agency-card">
+              <input type="radio" name="agenciaEvaluada" value="BRICK" required />
+              <span>BRICK</span>
+            </label>
+            <label class="agency-card">
+              <input type="radio" name="agenciaEvaluada" value="BPR" required />
+              <span>BPR</span>
+            </label>
+            <label class="agency-card">
+              <input type="radio" name="agenciaEvaluada" value="AMPLIFY" required />
+              <span>AMPLIFY</span>
+            </label>
+            <label class="agency-card">
+              <input type="radio" name="agenciaEvaluada" value="ROW" required />
+              <span>ROW</span>
+            </label>
+          </div>
+        </section>
+
+        <section class="step" data-step-title="Experiencia del equipo">
+          <div class="step-header">
+            <span class="step-kicker">Bloque 2</span>
+            <h2>Experiencia del equipo</h2>
+            <p class="lead">Evalúa cómo se sintió el trabajo cotidiano con la agencia.</p>
+          </div>
+
+          <div class="question-block">
+            <div class="question-copy">
+              <h3>Nuestro equipo disfrutó trabajando con la agencia</h3>
+            </div>
+            <div class="likert-grid" data-name="q1DisfrutoTrabajar"></div>
+          </div>
+
+          <div class="question-block">
+            <div class="question-copy">
+              <h3>El equipo de la agencia con el que trabajamos fue fiable</h3>
+            </div>
+            <div class="likert-grid" data-name="q2Fiables"></div>
+          </div>
+
+          <div class="question-block">
+            <div class="question-copy">
+              <h3>La agencia fomentó un ambiente colaborativo</h3>
+            </div>
+            <div class="likert-grid" data-name="q3Colaborativo"></div>
+          </div>
+        </section>
+
+        <section class="step" data-step-title="Estrategia y valor">
+          <div class="step-header">
+            <span class="step-kicker">Bloque 3</span>
+            <h2>Estrategia y valor</h2>
+            <p class="lead">Ahora evalúa el impacto del trabajo realizado.</p>
+          </div>
+
+          <div class="question-block">
+            <div class="question-copy">
+              <h3>La agencia creó valor para nuestro equipo y permitió mejores prácticas para cumplir los objetivos planteados</h3>
+            </div>
+            <div class="likert-grid" data-name="q4CreoValor"></div>
+          </div>
+
+          <div class="question-block">
+            <div class="question-copy">
+              <h3>El trabajo de la agencia se basó en la estrategia</h3>
+            </div>
+            <div class="likert-grid" data-name="q5BasadoEstrategia"></div>
+          </div>
+
+          <div class="question-block">
+            <div class="question-copy">
+              <h3>La agencia nos permitió adoptar una mentalidad creativa</h3>
+            </div>
+            <div class="likert-grid" data-name="q6MentalidadCreativa"></div>
+          </div>
+        </section>
+
+        <section class="step" data-step-title="Relación de trabajo">
+          <div class="step-header">
+            <span class="step-kicker">Bloque 4</span>
+            <h2>Durante la relación de trabajo</h2>
+            <p class="lead">Selecciona todos los puntos que correspondan.</p>
+          </div>
+
+          <div class="chip-grid checkbox-grid">
+            <label class="chip-option"><input type="checkbox" name="aspectos" value="Fue clara en la definición de los procesos de trabajo" /><span>Fue clara en la definición de los procesos de trabajo</span></label>
+            <label class="chip-option"><input type="checkbox" name="aspectos" value="Se alineó y ajustó al cronograma propuesto inicialmente" /><span>Se alineó y ajustó al cronograma propuesto inicialmente</span></label>
+            <label class="chip-option"><input type="checkbox" name="aspectos" value="Dio espacios a momentos de construcción y estrategia" /><span>Dio espacios a momentos de construcción y estrategia</span></label>
+            <label class="chip-option"><input type="checkbox" name="aspectos" value="Identificó oportunidades para mejorar las experiencias" /><span>Identificó oportunidades para mejorar las experiencias</span></label>
+            <label class="chip-option"><input type="checkbox" name="aspectos" value="Tuvo un buen nivel de análisis y llegó a conclusiones prácticas con impacto en el servicio" /><span>Tuvo un buen nivel de análisis y llegó a conclusiones prácticas con impacto en el servicio</span></label>
+            <label class="chip-option"><input type="checkbox" name="aspectos" value="Realizó implementaciones de calidad y ejecutó correctamente las acciones propuestas en el plan" /><span>Realizó implementaciones de calidad y ejecutó correctamente las acciones propuestas en el plan</span></label>
+          </div>
+        </section>
+
+        <section class="step" data-step-title="NPS y continuidad">
+          <div class="step-header">
+            <span class="step-kicker">Bloque 5</span>
+            <h2>NPS y continuidad</h2>
+            <p class="lead">Una medida rápida y una breve explicación.</p>
+          </div>
+
+          <div class="field-stack compact">
+            <label class="field-label">¿Qué probabilidad hay de que recomiendes a esta agencia a un amigo o colega? *</label>
+            <div class="nps-scale" data-name="npsRecomendacion"></div>
+          </div>
+
+          <div class="field-stack compact">
+            <label class="field-label">¿Qué probabilidades hay de que continúes contratando los servicios de esta agencia? *</label>
+            <div class="nps-scale" data-name="npsContinuidad"></div>
+          </div>
+
+          <label class="field-stack">
+            <span class="field-label">¿Por qué escogiste la puntuación anterior? *</span>
+            <textarea name="motivoPuntuacion" rows="4" placeholder="Cuéntanos brevemente el porqué" required></textarea>
+          </label>
+
+          <label class="field-stack">
+            <span class="field-label">Comentarios adicionales</span>
+            <textarea name="comentariosAdicionales" rows="4" placeholder="Algo más que te gustaría compartir"></textarea>
+          </label>
+        </section>
+
+        <section class="step" data-step-title="Ficha de datos">
+          <div class="step-header">
+            <span class="step-kicker">Bloque 6</span>
+            <h2>Ficha de datos</h2>
+            <p class="lead">Tus datos quedan al final, como pediste.</p>
+          </div>
+
+          <div class="field-grid">
+            <label class="field-stack">
+              <span class="field-label">Nombre y apellido *</span>
+              <input type="text" name="nombreApellido" placeholder="Ej: Ana López" required />
+            </label>
+            <label class="field-stack">
+              <span class="field-label">Correo *</span>
+              <input type="email" name="correo" placeholder="nombre@empresa.com" required />
+            </label>
+          </div>
+
+          <label class="field-stack">
+            <span class="field-label">Organización a la que perteneces *</span>
+            <input type="text" name="organizacion" placeholder="Ej: Empresa XYZ" required />
+          </label>
+
+          <div class="field-grid">
+            <div class="autocomplete field-stack" data-autocomplete>
+              <label class="field-label" for="cargoInput">Cargo *</label>
+              <input id="cargoInput" type="text" name="cargo" autocomplete="off" placeholder="Escribe tu cargo" required />
+              <div class="suggestions" hidden></div>
+            </div>
+
+            <div class="autocomplete field-stack" data-autocomplete>
+              <label class="field-label" for="servicioInput">Servicio contratado *</label>
+              <input id="servicioInput" type="text" name="servicioContratado" autocomplete="off" placeholder="Escribe el servicio" required />
+              <div class="suggestions" hidden></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="step" data-step-title="Revisión final">
+          <div class="step-header">
+            <span class="step-kicker">Bloque 7</span>
+            <h2>Revisión final</h2>
+            <p class="lead">Confirma la información antes de enviarla.</p>
+          </div>
+          <div id="reviewBox" class="review-box"></div>
+        </section>
+
+        <p id="status" class="status" aria-live="polite"></p>
+
+        <div class="nav-bar">
+          <button type="button" id="prevBtn" class="btn btn-ghost">Atrás</button>
+          <div class="nav-hint">Enter para avanzar cuando el bloque esté completo</div>
+          <div class="nav-main-actions">
+            <button type="button" id="nextBtn" class="btn btn-primary">Siguiente</button>
+            <button type="submit" id="submitBtn" class="btn btn-primary">Enviar respuesta</button>
+          </div>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
